@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="jp.watnow.appname" version="1.0.0" xmlns="http://www.w3.org/ns/widgets"
+        xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>AppName</name>
+    <description>
+        Hello World sample application that responds to the deviceready event.
+    </description>
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
+    </author>
+    <!-- Plugins-->
+    <gap:plugin name="org.apache.cordova.splashscreen"/>
+    <gap:plugin name="com.phonegap.plugin.statusbar"/>
+
+    <preference name="permissions" value="none"/>
+    <preference name="orientation" value="default"/>
+
+    <!-- iOS Only -->
+    <preference name="target-device" value="universal"/>
+    <preference name="prerendered-icon" value="true"/>
+    <preference name="detect-data-types" value="true"/>
+    <preference name="exit-on-suspend" value="false"/>
+    <preference name="webviewbounce" value="false"/>
+    <preference name="DisallowOverscroll" value="true"/>
+
+    <!-- Android Only -->
+    <preference name="android-minSdkVersion" value="14"/>
+    <preference name="android-installLocation" value="auto"/>
+    <preference name="splash-screen-duration" value="10000"/>
+
+    <!-- Icons -->
+    <icon src="icon.png"/>
+
+    <!-- Splash Screen -->
+    <gap:splash src="splash.png"/>
+    <!-- iPhone and iPod touch -->
+    <gap:splash src="splash/ios/320_480.png" gap:platform="ios" width="320" height="480"/>
+    <gap:splash src="splash/ios/640_960.png" gap:platform="ios" width="640" height="960"/>
+    <!-- iPhone 5 / iPod Touch (5th Generation) -->
+    <gap:splash src="splash/ios/640_1136.png" gap:platform="ios" width="640" height="1136"/>
+    <!-- iPad -->
+    <gap:splash src="splash/ios/768_1024.png" gap:platform="ios" width="768" height="1024"/>
+    <gap:splash src="splash/ios/1024_768.png" gap:platform="ios" width="1024" height="768"/>
+    <!-- Retina iPad -->
+    <gap:splash src="splash/ios/1536_2048.png" gap:platform="ios" width="1536" height="2048"/>
+    <gap:splash src="splash/ios/2048_1536.png" gap:platform="ios" width="2048" height="1536"/>
+    <!-- Android -->
+    <gap:splash src="splash/android/360_640.9.png" gap:platform="android" gap:density="mdpi"/>
+    <gap:splash src="splash/android/540_960.9.png" gap:platform="android" gap:density="hdpi"/>
+    <gap:splash src="splash/android/720_1280.9.png" gap:platform="android" gap:density="xhdpi"/>
+    <gap:splash src="splash/android/1080_1920.9.png" gap:platform="android" gap:density="xxhdpi"/>
+
+    <access origin="http://127.0.0.1/*"/>
+    <gap:platform name="ios"/>
+    <gap:platform name="android"/>
+</widget>

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/**
+Nav
+**/
+@media screen and (orientation: portrait) {
+  nav {
+    width: 70%;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  nav {
+    width: 50%;
+  }
+}
+
+nav {
+  background-color: #3e454c;
+  font-size: $font-size-medium;
+  color: white;
+}
+
+
+
+.nav-list-title {
+  background-color: #313532;
+  padding: .8rem 0;
+  padding-left: 2rem;
+}
+
+.nav-list-padding{
+  margin-top: 2.5rem;
+}
+
+.nav-category-list {
+}
+
+.nav-list-item {
+  padding: 1.2rem 0;
+  padding-left: 3rem;
+  text-overflow: ellipsis;
+}

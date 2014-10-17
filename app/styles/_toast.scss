@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/**
+Toast
+**/
+
+.toast {
+  position: absolute;
+  bottom: 5rem;
+  z-index: 1500;
+  left: 0;
+  max-width: 80%;
+  background-color: rgba(0, 0, 0, .5);
+  padding: .5rem 1rem .5rem 1rem;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+}
+
+.toast-message {
+  color: white;
+}
+
+.toast-hide {
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .5s linear, z-index .5s linear;
+}

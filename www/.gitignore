@@ -1,0 +1,6 @@
+*.js
+*.html
+*.css
+!.gitignore
+!config.xml
+!*.png

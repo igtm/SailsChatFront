@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/**
+Dialog
+**/
+
+#dialog {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 100%;
+  font-size: $font-size-default;
+
+  input {
+    border-radius: 0;
+    border: 1px solid $border-color-gray;
+    margin: 1rem auto;
+    width: 90%;
+  }
+}
+
+$dialog_width: 85%;
+.dialog-panel {
+  background-color: #f9f9f9;
+  @include flex-box();
+  @include flex-direction(column);
+  @include justify-content(flex-start);
+  @include align-items(flex-start);
+  width: $dialog_width;
+  max-width: 40rem;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  //margin-left: -$dialog_width/2;
+}
+
+.dialog-show {
+  z-index: 1300;
+}
+
+.dialog-hide {
+  display: none;
+  z-index: -1;
+}
+
+.dialog-title {
+  width: 100%;
+  text-align: center;
+  font-size: $font-size-big;
+  color: $font-color-blue;
+  padding: 1rem;
+  border-bottom: 1px solid $color-blue;
+}
+
+.dialog-content {
+  text-align: center;
+  padding: 2rem;
+  @include flex-grow(1);
+  width: 100%;
+}
+
+.dialog-buttons {
+  border-top: 1px solid #dcdcdc;
+  text-align: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.dialog-buttons button {
+  width: 40%;
+  margin: 0 3%;
+}
+
+.dialog-ready {
+  visibility: hidden;
+}
+
+.dialog-list-item {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.dialog-list {
+  overflow-y: auto;
+  padding: 0;
+  text-align: left;
+}
+
+.dialog-list-selected {
+  color: white;
+  background-color: $color-blue;
+}
+
+.dialog-input {
+  width: 100%;
+}
+
+.dialog-process {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}

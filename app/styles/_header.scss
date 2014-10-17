@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/**
+Header
+**/
+
+header {
+  //height: 8%;
+  min-height: $header-min-height;
+  background-color: $header-color;
+  @include flex-box();
+  @include flex-direction(row);
+  @include justify-content(center);
+  @include align-items(center);
+}
+
+.iOS {
+  header {
+    min-height: $header-min-height + 1rem;
+    padding-top: 1.5rem;
+  }
+}
+
+.header-item {
+  text-align: center;
+  color: white;
+}
+
+.header-icon {
+  width: 15%;
+  max-width: 5rem;
+
+  i {
+    vertical-align: middle;
+  }
+
+  span {
+    margin-left: .5rem;
+  }
+}
+
+.header-padding {
+  //max-width: 8rem;
+  visibility: hidden;
+  @include flex-grow(1);
+}
+
+.header-flex-padding {
+  max-width: none;
+  visibility: hidden;
+}
+
+.header-back {
+  padding-left: 1rem;
+  text-align: left;
+  //width: 20%;
+  max-width: 8rem;
+}
+
+.header-info {
+  font-size: 2.0rem;
+  text-align: center;
+}

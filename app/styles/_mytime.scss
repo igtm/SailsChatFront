@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/**
+MyTime
+**/
+#mytime {
+  padding: 1rem;
+}
+
+.mytime-route {
+  margin-bottom: 1rem;
+}
+
+.mytime-list {
+  overflow: auto;
+}
+
+.mytime-item {
+  margin-bottom: 1rem;
+}
+
+.mytime-time {
+  background-color: white;
+  text-align: center;
+  padding: .5rem;
+}
+
+.mytime-btns {
+  @include flex-box();
+  @include flex-direction(row);
+  @include justify-content(center);
+  @include align-items(center);
+  padding: 1rem;
+  background-color: #f5f5f5;
+  color: white;
+  div {
+    width: 45%;
+    text-align: center;
+    font-size: 2.3rem;
+  }
+}
+
+.mytime-dep {
+  background-color: #6CBB68;
+  border-radius: .3rem 0 0 .3rem;
+}
+
+.mytime-arr {
+  background-color: #FAB679;
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.mytime-btn {
+  margin-top: 2rem;
+}
+
+.mytime-selected {
+  background-color: #D1D1D1;
+}

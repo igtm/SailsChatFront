@@ -1,0 +1,54 @@
+@charset "UTF-8";
+/**
+Preference
+**/
+
+#preference {
+  padding: 1.0rem;
+  background-color: $background-color;
+
+  select {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+    opacity: 0;
+  }
+}
+
+.preference-title {
+  text-align: center;
+}
+
+.preference-list {
+  border: 1px solid #DBDBDB;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 2rem;
+}
+
+.preference-list-item {
+  position: relative;
+  z-index: 1;
+  padding: 1.0rem 1rem;
+  border-bottom: 1px solid #cbcbcb;
+  @include flex-box();
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include align-items(center);
+}
+
+.preference-key {
+  @include flex-grow(1);
+}
+
+.preference-value {
+  color: $font-color-blue;
+  text-align: right;
+}
+
+.no-border {
+  border: 0;
+}

@@ -1,0 +1,14 @@
+node_modules
+temp
+dist
+.sass-cache
+app/bower_components
+.tmp/
+
+#PhoneGap関連
+platforms
+plugins
+!*/.gitkeep
+
+#WebStom,PhpStom関連
+.idea

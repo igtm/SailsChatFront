@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/**
+Base
+**/
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 64.5%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  background-color: $background-color;
+}
+
+body {
+  font-size: $font-size-default;
+  color: $font-color-grey;
+  /* アンカー要素をタップしたときに出てくる枠を見えなくする */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* リンクの長押しでメニューを出さないようにする */
+  -webkit-touch-callout: none;
+
+  /* 文字列や画像を選択してコピーなどのメニューを出さないように、選択不可にする */
+  -webkit-user-select: none;
+}
+
+*:not(input) {
+  -webkit-user-select: none;
+}
+
+header {
+  position: absolute;
+  z-index: $header-zindex;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+nav, #content, #menu {
+  position: absolute;
+  top: $header-min-height;
+  bottom: 0;
+}
+
+nav {
+  z-index: 0;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+#menu {
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+#main {
+  background-color: $background-color;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#content {
+  left: 0;
+  right: 0;
+}
+
+#mask {
+  position: absolute;
+  display: none;
+  z-index: 1500;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.page {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: $background-color;
+}
+
+.page-show {
+  display: block;
+}
+
+.hide-tmp {
+  opacity: 0;
+  z-index: -1;
+}
+
+.page-tabs {
+  @include flex-box();
+  @include flex-direction(row);
+}
+
+.page-tab {
+  @include flex-grow(1);
+  text-align: center;
+  border: 1px black solid;
+  border-bottom: 0px;
+  padding: .5rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: $background-color;
+}
+
+.page-tab-center {
+  border: 0px;
+  border-top: 1px #000000 solid;
+}
+
+.page-tab-active {
+  background-color: #ffffff;
+}
