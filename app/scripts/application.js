@@ -24,7 +24,9 @@ define([
                 selector: "#content",
                 regionType: ContentRegion
             },
-            'dialog': '#dialog'
+            'dialog': '#dialog',
+            'nav': '#nav',
+            'toast': '#toast'
         });
 
         /* Add initializers here */
@@ -71,12 +73,13 @@ define([
                 }
             });
 
-            this.listenToOnce(this, 'DB:ready', function () {
+            this.listenToOnce(App.DataManager, 'DB:ready', function () {
                 //ルーター準備
                 new Router();
                 Backbone.history.start();
-                Communicator.command.execute('changePage', 'myroute');
+                Communicator.command.execute('changePage', 'firstPage');
             });
+            App.DataManager.start();
         });
 
         return App;

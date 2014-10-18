@@ -1,0 +1,42 @@
+@charset "UTF-8";
+.btn {
+  font-size: $font-size-default;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0px;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+  color: inherit;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-negative {
+  background-color: #9e9e9e;
+}
+
+.btn-negative:hover, .btn-negative:focus, .btn-negative:active {
+  color: white;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: black;
+  border: 0;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  border: 0px;
+  color: black;
+  background-color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-primary[disabled] {
+  background-color: $btn-color-ok;
+  border: 0;
+  opacity: .5;
+}

@@ -9,24 +9,21 @@ define([
             /* Backbone routes hash */
             pages: {},
             initialize: function () {
-                this.pages = {
-                };
+                console.log("initialize a Router");
+                this.pages = {};
                 Communicator.command.setHandler('changePage', this.changePage, this);
                 Communicator.command.setHandler('setBackHandler', this.setBackHandler, this);
                 Communicator.command.setHandler('back', this.back, this);
+                //ルート定義
+                var routes = [];
+                //ルートのbinding
+                _.each(routes, function (route) {
+                    this.route(route, "checkHash");
+                }, this);
             },
-            //ルート記述
-            routes: {
-                "myroute": "checkHash",
-                "countdown": "checkHash",
-                "ctimetable": "checkHash",
-                "timetable": "checkHash",
-                "mytime": "checkHash",
-                "policy": "checkHash",
-                "search": "checkHash",
-                "preference": "checkHash",
-                "aboutdata": "checkHash"
-            },
+
+            //独自にルートを定義する場合
+            routes: {},
 
             /**
              * Hashの確認

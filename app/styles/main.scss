@@ -1,12 +1,24 @@
+@charset "UTF-8";
 @import '../bower_components/bootstrap-sass/lib/bootstrap';
 @import '../bower_components/font-awesome/scss/font-awesome';
-
-@import "Block/flexbox";
 
 @import "variables";
 @import "mixins";
 
+/**
+共通部品
+**/
+@import "Block/flexbox";
+@import "Block/button";
+/**
+基本スタイル
+**/
 @import "base";
 @import "header";
 @import "nav";
 @import "dialog";
+@import "toast";
+/**
+各Pageのスタイル
+**/
+@import "preference";

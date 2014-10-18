@@ -1,8 +1,9 @@
 define([
     'backbone',
-    'communicator'
+    'communicator',
+    'hbs!tmpl/view/nav_tmpl'
 ],
-    function (Backbone, Communicator) {
+    function (Backbone, Communicator,NavTmpl) {
         'use strict';
 
         /* Return a Viewt class definition */
@@ -36,10 +37,10 @@ define([
                 });
             },
 
+            template: NavTmpl,
+
             /* Layout sub regions */
-            regions: {
-                'categoryList': '.nav-category-list'
-            },
+            regions: {},
 
             /* ui selector cache */
             ui: {},
