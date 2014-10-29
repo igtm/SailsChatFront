@@ -76,6 +76,10 @@ module.exports = function (grunt) {
             mocha: {
                 command: 'mocha-phantomjs http://localhost:<%= connect.testserver.options.port %>/test',
                 stdout: true
+            },
+            cordova: {
+                command: 'cordova prepare',
+                stdout: true
             }
         },
 
@@ -328,7 +332,8 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy',
-        'usemin'
+        'usemin',
+        'exec:cordova'
     ]);
 
 };
