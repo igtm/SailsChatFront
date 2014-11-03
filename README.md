@@ -16,7 +16,7 @@ ApplicationTemplate
 
 GitLabからCloneする
 
-     $clone git AppName ssh://git@gitlab.watnow.jp:22022/watnow/applicationtemplate.git
+     $clone git ssh://git@gitlab.watnow.jp:22022/watnow/applicationtemplate.git AppName
 
 Gitのリモートリポジトリをプロジェクトのものに変更する([GitLab](http://gitlab.watnow.jp)で先にプロジェクトを作成しておく)
 

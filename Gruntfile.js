@@ -304,7 +304,7 @@ module.exports = function (grunt) {
             'compass:server',
             'connect:testserver',
             'express:dev',
-            'exec',
+            'exec:mocha',
             'open',
             'watch'
         ]);
