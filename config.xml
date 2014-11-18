@@ -14,7 +14,7 @@
 
     <!--Global-->
     <preference name="Fullscreen" value="false"/>
-    <preference name="Orientation" value="portrait"/>
+    <preference name="Orientation" value="default"/>
 
     <!--Multi-platform-->
     <preference name="DisallowOverscroll" value="true"/>

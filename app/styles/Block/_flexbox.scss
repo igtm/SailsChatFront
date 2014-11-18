@@ -3,60 +3,77 @@
 FlexBox
 **/
 @mixin flex-box() {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: nowrap;
+	flex-wrap: nowrap;
 }
 
 @mixin flex-direction($orient) {
-  @if $orient == row{
-    -webkit-box-orient: horizontal;
-  } @else {
-    -webkit-box-orient: vertical;
-  }
-  -webkit-flex-direction: $orient;
-  flex-direction: $orient;
+	-webkit-flex-direction: $orient;
+	flex-direction: $orient;
 }
 
 @mixin justify-content($horizontal) {
-  @if $horizontal == flex-start{
-    -webkit-box-pack: start;
-  } @else if $horizontal == flex-end{
-    -webkit-box-pack: end;
-  } @else {
-    -webkit-box-pack: $horizontal;
-  }
-  -webkit-justify-content: $horizontal;
-  justify-content: $horizontal;
+	-webkit-justify-content: $horizontal;
+	justify-content: $horizontal;
 }
 
 @mixin align-items($vertical) {
-  @if $vertical == flex-start{
-    -webkit-box-align: start;
-  } @else if $vertical == flex-end{
-    -webkit-box-align: end;
-  } @else {
-    -webkit-box-align: $vertical;
-  }
-
-  -webkit-align-items: $vertical;
-  align-items: $vertical;
+	-webkit-align-items: $vertical;
+	align-items: $vertical;
 }
 
 @mixin flex-grow($power) {
-  -webkit-box-flex: $power;
-  -webkit-flex-grow: $power;
-  flex-grow: $power;
+	-webkit-flex-grow: $power;
+	flex-grow: $power;
 }
 
 @mixin flex-shrink($power) {
-  -webkit-flex-shrink: $power;
-  flex-shrink: $power;
+	-webkit-flex-shrink: $power;
+	flex-shrink: $power;
 }
 
 @mixin flex-basis($width) {
-  -webkit-flex-basis: $width;
-  flex-basis: $width;
+	-webkit-flex-basis: $width;
+	flex-basis: $width;
+}
+
+.flexbox-horizontal {
+	@include flex-box();
+	@include flex-direction(row);
+}
+
+.flexbox-vertical {
+	@include flex-box();
+	@include flex-direction(column);
+}
+
+.flex-padding {
+	@include flex-grow(1);
+}
+
+/**
+Old FlexBox
+**/
+.flexbox-horizontal-legacy {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+}
+
+.flexbox-vertical-legacy {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+@mixin box-pack($horizontal) {
+	-webkit-box-pack: $horizontal;
+}
+
+@mixin box-align($vertical) {
+	-webkit-box-align: $vertical;
+}
+
+@mixin box-flex($power) {
+	-webkit-box-flex: $power;
 }
