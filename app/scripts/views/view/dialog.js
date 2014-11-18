@@ -203,6 +203,7 @@ define([
 							title: _title,
 							message: _message
 						}));
+						_title = "";
 					}
 				} else if ((window.device && window.device.platform == "Android") || ua.isAndroid) {
 					if (navigator && navigator.notification && navigator.notification.activityStart) {
