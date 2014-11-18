@@ -15,7 +15,9 @@ define([
                 Communicator.command.setHandler('setBackHandler', this.setBackHandler, this);
                 Communicator.command.setHandler('back', this.back, this);
                 //ルート定義
-                var routes = [];
+                var routes = [
+					"license"
+				];
                 //ルートのbinding
                 _.each(routes, function (route) {
                     this.route(route, "checkHash");

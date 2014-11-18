@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/**
+license
+**/
+
+#license {
+	padding: 1.5rem;
+}
+
+.iOS {
+	#license {
+		-webkit-overflow-scrolling: touch;
+	}
+
+	#license > * {
+		-webkit-transform: translateZ(0px);
+	}
+}
+
+.license-item {
+	display: none;
+	margin-bottom: 3rem;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.license-name {
+	margin-bottom: .5rem;
+}
+
+.license-license {
+	margin-bottom: 2rem;
+}
+
+.license-content {
+	margin-bottom: 1rem;
+}
