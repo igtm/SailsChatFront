@@ -4,205 +4,211 @@ Dialog
 **/
 
 #dialog {
-	position: absolute;
-	background-color: rgba(0, 0, 0, 0.15);
-	width: 100%;
-	height: 100%;
-	font-size: $font-size-default;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 100%;
+  font-size: $font-size-default;
 
-	input {
-		border-radius: 0;
-		border: 1px solid $border-color-gray;
-		width: 90%;
-		padding: .4rem;
-	}
+  input {
+    border-radius: 0;
+    border: 1px solid #bbbbbb;
+    width: 90%;
+    padding: .4rem;
+  }
 
-	input:focus {
-		outline: 0;
-	}
+  input:focus {
+    outline: 0;
+  }
 }
 
 $dialog_width: 85%;
 .dialog-panel {
-	background-color: #f9f9f9;
-	@extend .flexbox-vertical;
-	@include justify-content(flex-start);
-	@include align-items(flex-start);
-	width: $dialog_width;
-	max-width: 40rem;
-	position: absolute;
-	top: 48%;
-	left: 50%;
-	//margin-left: -$dialog_width/2;
+  background-color: #f9f9f9;
+  @extend .flexbox-vertical;
+  @include justify-content(flex-start);
+  @include align-items(flex-start);
+  width: $dialog_width;
+  max-width: 40rem;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  z-index: $header-zindex+1;
+  //margin-left: -$dialog_width/2;
 }
 
 .no-flexbox .dialog-panel {
-	@extend .flexbox-vertical-legacy;
-	@include justify-content(start);
-	@include align-items(start);
+  @extend .flexbox-vertical-legacy;
+  @include justify-content(start);
+  @include align-items(start);
 }
 
 .dialog-title {
-	width: 100%;
-	font-size: $font-size-big;
-	padding: 1rem;
-	@include flex-shrink(0);
+  width: 100%;
+  font-size: $font-size-big;
+  padding: 1rem;
+  @include flex-shrink(0);
+}
+
+.dialog-message {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .dialog-content {
-	overflow-y: auto;
-	text-align: center;
-	//padding: 2rem;
-	@include flex-grow(1);
-	width: 100%;
+  overflow-y: auto;
+  text-align: center;
+  //padding: 2rem;
+  @include flex-grow(1);
+  width: 100%;
 }
 
 .no-flexbox .dialog-content {
-	@include box-flex(1);
+  @include box-flex(1);
 }
 
 .dialog-buttons {
-	border-top: 1px solid #dcdcdc;
-	text-align: center;
-	width: 100%;
-	@extend .flexbox-horizontal;
-	@include justify-content(center);
-	@include flex-shrink(0);
+  border-top: 1px solid #dcdcdc;
+  text-align: center;
+  width: 100%;
+  @extend .flexbox-horizontal;
+  @include justify-content(center);
+  @include flex-shrink(0);
 
-	#dialog-cancel-button {
-		border-left: 1px solid #dcdcdc;
-	}
-	div {
-		padding: 1.2rem 0;
-		width: 48%;
-	}
+  #dialog-cancel-button {
+    border-left: 1px solid #dcdcdc;
+  }
+  div {
+    padding: 1.2rem 0;
+    width: 48%;
+  }
 }
 
 .no-flexbox .dialog-buttons {
-	@extend .flexbox-horizontal-legacy;
-	@include box-pack(center);
+  @extend .flexbox-horizontal-legacy;
+  @include box-pack(center);
 }
 
 .dialog-prepare {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 .dialog-list-item {
-	padding: 1.2rem;
-	border-bottom: 1px solid #dcdcdc;
+  padding: 1.2rem;
+  border-bottom: 1px solid #dcdcdc;
 }
 
 .dialog-list-selected {
-	color: white;
-	background-color: $color-blue;
+  color: white;
+  background-color: #70ACFF;
 }
 
 /**
 iOS
 **/
 .iOS {
-	.dialog-panel {
-		border-radius: 1.2rem;
-	}
+  .dialog-panel {
+    border-radius: 1.2rem;
+  }
 
-	.dialog-title {
-		padding-bottom: .5rem;
-		margin-top: 1.5rem;
-		color: #000000;
-		text-align: center;
-	}
+  .dialog-title {
+    padding-bottom: .5rem;
+    margin-top: 1.5rem;
+    color: #000000;
+    text-align: center;
+  }
 
-	.dialog-content {
-		color: #000000;
+  .dialog-content {
+    color: #000000;
 
-		.dialog-list-item:first-child {
-			border-top: 1px solid #dcdcdc;
-		}
+    .dialog-list-item:first-child {
+      border-top: 1px solid #dcdcdc;
+    }
 
-		input {
-			margin-bottom: 1.5rem;
-		}
-	}
+    input {
+      margin-bottom: 1.5rem;
+    }
+  }
 
-	.dialog-message {
-		margin-bottom: 2rem;
-	}
+  .dialog-message {
+    margin-bottom: 2rem;
+  }
 
-	.dialog-buttons {
-		color: $font-color-blue;
-		font-size: $font-size-big;
-	}
+  .dialog-buttons {
+    color: #70ACFF;
+    font-size: $font-size-big;
+  }
 
-	.dialog-progress-title {
-		font-size: $font-size-big;
-		margin: 1rem 0 .5rem 0;
-	}
+  .dialog-progress-title {
+    font-size: $font-size-big;
+    margin: 1rem 0 .5rem 0;
+  }
 
-	.dialog-list-item {
-		padding: 1.2rem;
-		text-align: center;
-	}
+  .dialog-list-item {
+    padding: 1.2rem;
+    text-align: center;
+  }
 }
 
 /**
 Android
 **/
 .android {
-	.dialog-title {
-		text-align: left;
-		font-size: $font-size-big;
-		color: $font-color-blue;
-		padding: 1.3rem;
-		border-bottom: 2px solid $color-blue;
-	}
+  .dialog-title {
+    text-align: left;
+    font-size: $font-size-big;
+    color: #70ACFF;
+    padding: 1.3rem;
+    border-bottom: 2px solid #70ACFF;
+  }
 
-	.dialog-content {
+  .dialog-content {
 
-		.dialog-list-item {
-			text-align: left;
-		}
+    .dialog-list-item {
+      text-align: left;
+    }
 
-		input {
-			margin-bottom: 1.5rem;
-		}
-	}
+    input {
+      margin-bottom: 1.5rem;
+    }
+  }
 
-	.dialog-message {
-		text-align: left;
-		font-size: $font-size-big;
-		margin-bottom: 3rem;
-		padding-top: 1rem;
-		padding-left: 1.3rem;
-	}
+  .dialog-message {
+    text-align: left;
+    font-size: $font-size-big;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+    padding-left: 1.3rem;
+  }
 
-	.dialog-progress-title {
-		display: none;
-	}
+  .dialog-progress-title {
+    display: none;
+  }
 
-	.dialog-progress {
-		@extend .flexbox-horizontal;
-		@include align-items(center);
-		padding: 2rem;
+  .dialog-progress {
+    @extend .flexbox-horizontal;
+    @include align-items(center);
+    padding: 2rem;
 
-		i {
-			font-size: 3em;
-			@include flex-shrink(0);
-		}
+    i {
+      font-size: 3em;
+      @include flex-shrink(0);
+    }
 
-		div {
-			@include flex-grow(1);
-			padding: 0;
-			padding-left: 2rem;
-			margin-bottom: 0;
-		}
-	}
+    div {
+      @include flex-grow(1);
+      padding: 0;
+      padding-left: 2rem;
+      margin-bottom: 0;
+    }
+  }
 
-	.no-flexbox .dialog-progress {
-		@extend .flexbox-horizontal-legacy;
-		@include box-align(center);
+  .no-flexbox .dialog-progress {
+    @extend .flexbox-horizontal-legacy;
+    @include box-align(center);
 
-		div {
-			@include box-flex(1);
-		}
-	}
+    div {
+      @include box-flex(1);
+    }
+  }
 }
