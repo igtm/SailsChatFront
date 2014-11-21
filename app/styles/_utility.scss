@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/************
+*  Utility  *
+*************/
+
+// 円の描画
+@mixin circle($width,$height){
+  width: $width+px;
+  height:$height+px;
+  $x : $width*0.5+px;
+  $y : $height*0.5+px;
+  -webkit-border-radius: $x +"/"+ $y;
+  -moz-border-radius: $x +"/"+ $y;
+  border-radius: $x +"/"+ $y;
+}
