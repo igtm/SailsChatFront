@@ -1,15 +1,14 @@
 {
   "name": "applicationtemplate",
   "version": "1.0.0",
-  
   "dependencies": {
     "express": "~3.2.4",
     "request": "~2.21.0",
     "async": "~0.2.8",
     "express-hbs": "~0.2.0",
-    "underscore": "~1.4.4"
+    "underscore": "~1.4.4",
+    "corser": "^2.0.0"
   },
-  
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.0",
@@ -37,7 +36,7 @@
     "grunt-exec": "~0.4.2",
     "grunt-contrib-watch": "~0.4.4",
     "time-grunt": "~0.1.1",
-      "cordova":"~4.0"
+    "cordova": "~4.0"
   },
   "engines": {
     "node": ">=0.8.0"

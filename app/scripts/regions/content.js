@@ -1,9 +1,11 @@
 define([
 		'backbone',
 		'communicator',
-		'views/page/license'
+        'views/page/TopItemV',
+        'views/page/RoomCompV',
+        'views/page/LoginItemV'
 	],
-	function (Backbone, Communicator, LicensePage) {
+	function (Backbone, Communicator, TopPage, RoomPage, LoginPage) {
 		'use strict';
 
 		/* Return a Region class definition */
@@ -18,6 +20,8 @@ define([
 				this.listenTo(Communicator.mediator, 'resize', this.rerender);
 				var content = $('#content');
 				Communicator.command.setHandler('changeContent', this.changeContent, this);
+                // this.pages.rooms = []; 本当は配列で管理したいけど、_.containsがうまくいかないとおもう。viewが消えなくなる
+                this.pages.rooms = [];
 			},
 
 			//ページの初期化方法
@@ -25,9 +29,23 @@ define([
 			initPageView: function (pageName) {
 				var view;
 				switch (pageName) {
-					case "license":
-						view = new LicensePage();
-						break;
+                    case "login":
+                        view = new LoginPage();
+                        break;
+                    case "top":
+                        if(!this.pages.TopPage){
+                            this.pages.TopPage = new TopPage();
+                        }
+                        view = this.pages.TopPage;
+                        break;
+                    case "room":
+                        var i = this.args.room_id - 1;
+                        if(!this.pages.rooms[i]){
+                            this.pages.rooms[i] = new RoomPage();
+                        }
+                        view = this.pages.rooms[i];
+
+                        break;
 					default:
 						throw "Not defined PageView"
 				}
@@ -38,9 +56,13 @@ define([
 				this.args = args;
 				var previousView = this.currentView;
 				var preventClose = false;
-				if (previousView)
-					preventClose = _.contains(this.pages, previousView);
-
+				if (previousView) {
+                    preventClose = _.contains(this.pages, previousView);
+                    // roomsの配列に対応させる。
+                    if (!preventClose && this.pages.rooms){
+                        preventClose = _.indexOf(this.pages.rooms, previousView) !== -1;
+                    }
+                }
 				var view = this.initPageView(pageName);
 				this.show(view, {preventClose: preventClose});
 

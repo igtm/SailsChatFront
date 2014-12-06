@@ -61,7 +61,8 @@ require.config({
         uajudge: 'vendor/searchua.min',
         moment: '../bower_components/momentjs/moment',
         momentja: '../bower_components/momentjs/lang/ja',
-        'backbone.stickit': '../bower_components/backbone.stickit/backbone.stickit'
+        'backbone.stickit': '../bower_components/backbone.stickit/backbone.stickit',
+        'io': 'vendor/sails.io'
     },
 
     hbs: {

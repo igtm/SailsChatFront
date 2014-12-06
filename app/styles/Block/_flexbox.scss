@@ -15,18 +15,32 @@ FlexBox
 }
 
 @mixin justify-content($horizontal) {
-	-webkit-justify-content: $horizontal;
-	justify-content: $horizontal;
+  -webkit-justify-content: $horizontal;
+  justify-content: $horizontal;
+  @if ($horizontal == "flex-start") {
+    -webkit-box-pack: start;
+  } @else if ($horizontal == "flex-end") {
+    -webkit-box-pack: end;
+  } @else {
+    -webkit-box-pack: $horizontal;
+  }
 }
 
 @mixin align-items($vertical) {
-	-webkit-align-items: $vertical;
-	align-items: $vertical;
-}
+  -webkit-align-items: $vertical;
+  align-items: $vertical;
+  @if ($vertical == "flex-start") {
+    -webkit-box-align: start;
+  } @else if ($vertical == "flex-end") {
+    -webkit-box-align: end;
+  } @else {
+    -webkit-box-align: $vertical;
+  }}
 
 @mixin flex-grow($power) {
 	-webkit-flex-grow: $power;
 	flex-grow: $power;
+  -webkit-box-flex: $power;
 }
 
 @mixin flex-shrink($power) {
@@ -76,4 +90,19 @@ Old FlexBox
 
 @mixin box-flex($power) {
 	-webkit-box-flex: $power;
+}
+.no-flexbox {
+  .flexbox-horizontal {
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+  }
+
+  .flexbox-vertical {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+
+  input, i, span {
+    display: block;
+  }
 }

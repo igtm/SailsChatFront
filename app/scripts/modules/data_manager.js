@@ -1,8 +1,9 @@
 define([
     'backbone',
-    'communicator'
+    'communicator',
+    'models/UserModel'
 ],
-    function (Backbone, Communicator) {
+    function (Backbone, Communicator, UserModel) {
         'use strict';
 
         return Backbone.Marionette.Module.extend({
@@ -15,7 +16,7 @@ define([
                 app = {};
                 app.DB = openDatabase("appname", "", "AppName", 2 * 1024 * 1024);
                 app.DB_VERSION = "1";
-                app.BASE_URL = "http://www.watnow.jp/";
+                app.BASE_URL = "http://localhost:1337/";
                 app.TIMEOUT = 5000;
                 app.SUGGEST_DELAY = 500;
                 //DB Versionが違う場合
@@ -24,6 +25,9 @@ define([
                     });
                 }
                 window.app = app;
+                this.initializeData();
+
+                Communicator.reqres.setHandler("DM:getData",this.getData,this);
             },
 
             onStart: function (options) {
@@ -37,6 +41,16 @@ define([
 
             //初期データの準備など
             initializeData: function () {
+                this.UserModel = new UserModel();
+            },
+            getData: function(data){
+                var result;
+                switch(data){
+                    case 'user':
+                        result = this.UserModel;
+                        break;
+                }
+                return result;
             }
 
         });

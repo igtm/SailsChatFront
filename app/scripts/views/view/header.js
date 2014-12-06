@@ -17,7 +17,7 @@ define([
             ui: {
                 'back': '.header-back',
                 'setting': '.header-setting',
-                'info': '.header-info span',
+                'info': '.header-info',
                 'padding': '.header-padding'
             },
 
@@ -51,35 +51,20 @@ define([
                 console.log(mode);
                 if (this.mode != mode) {
                     switch (mode) {
-                        case 'myroute':
-                            this.displayElements(['padding', 'setting']);
+                        case 'login':
+                            this.displayElements(['info']);
                             break;
-                        case 'mytime':
-                            this.displayElements(['back', 'padding', 'setting']);
+                        case 'top':
+                            this.displayElements(['info']);
                             break;
-                        case 'ctimetable':
-                            this.displayElements(['back', 'padding', 'setting']);
-                            break;
-                        case 'search':
-                            this.displayElements(['back', 'padding', 'setting']);
-                            break;
-                        case 'countdown':
-                            this.displayElements(['back', 'padding', 'setting']);
-                            break;
-                        case 'timetable':
-                            this.displayElements(['back', 'padding', 'setting']);
-                            break;
-                        case 'preference':
-                            this.displayElements(['back', 'padding']);
-                            break;
-                        case 'policy':
-                            this.displayElements(['back', 'padding']);
+                        case 'room':
+                            this.displayElements(['back', 'info']);
                             break;
                     }
                     this.mode = mode;
-                    if (this.mode == "countdown" || this.mode == "mytime" || this.mode == "timetable") {
+                    if (this.mode == "fghfh") {
                         Communicator.command.execute('setBackHandler', function () {
-                            Communicator.command.execute('changePage', 'myroute');
+                            Communicator.command.execute('changePage', 'top');
                         });
                     } else {
                         Communicator.command.execute('setBackHandler');
@@ -89,8 +74,7 @@ define([
 
             displayElements: function (showElements) {
                 _.each(this.ui, function (ele, eleName) {
-                    if (eleName == "info") {
-                    } else if (showElements.indexOf(eleName) != -1) {
+                    if (showElements.indexOf(eleName) != -1) {
                         ele.show();
                     } else {
                         ele.hide();

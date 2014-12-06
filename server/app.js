@@ -5,6 +5,7 @@ var http = require('http');
 var path = require('path');
 var async = require('async');
 var hbs = require('express-hbs');
+var corser = require('corser');
 
 
 
@@ -28,6 +29,7 @@ app.use(function(req, res, next){
 // mount static
 app.use(express.static( path.join( __dirname, '../app') ));
 app.use(express.static( path.join( __dirname, '../.tmp') ));
+app.use(corser.create());
 
 
 // route index.html

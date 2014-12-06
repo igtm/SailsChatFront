@@ -16,7 +16,7 @@ define([
                 Communicator.command.setHandler('back', this.back, this);
                 //ルート定義
                 var routes = [
-					"license"
+                    'login','top','room'
 				];
                 //ルートのbinding
                 _.each(routes, function (route) {
