@@ -20,9 +20,12 @@ define([
 				this.listenTo(Communicator.mediator, 'resize', this.rerender);
 				var content = $('#content');
 				Communicator.command.setHandler('changeContent', this.changeContent, this);
-                // this.pages.rooms = []; 本当は配列で管理したいけど、_.containsがうまくいかないとおもう。viewが消えなくなる
                 this.pages.rooms = [];
+                Communicator.reqres.setHandler("Content:getQuery",this.getQuery,this);
 			},
+            getQuery: function(){
+                return this.args;
+            },
 
 			//ページの初期化方法
 			//ページ保持 or 削除
@@ -41,7 +44,7 @@ define([
                     case "room":
                         var i = this.args.room_id - 1;
                         if(!this.pages.rooms[i]){
-                            this.pages.rooms[i] = new RoomPage();
+                            this.pages.rooms[i] = new RoomPage({room_id:this.args.room_id});
                         }
                         view = this.pages.rooms[i];
 

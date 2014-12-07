@@ -37,8 +37,6 @@ function( Backbone, LoginitemvTmpl, Communicator  ) {
             UserModel.fetch({
                 data: {name: name},
                 success: _.bind(function(model, res, options){
-                    console.log(model);
-                    console.log(res);
                     UserModel.subscribe();
                     Communicator.command.execute('changePage','top');
                 },this)

@@ -9,9 +9,12 @@ function( Backbone ) {
 
         initialize: function () {
             console.log("initialize a Class model");
+            this.base_url = window.app.BASE_URL + 'chat';
         },
 
-        url: window.app.BASE_URL + "room/chat",
+        base_url: '',
+
+        url: '',
 
         defaults: {
         }

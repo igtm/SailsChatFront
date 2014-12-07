@@ -7,16 +7,18 @@ define([
 		'views/view/header',
 		'views/view/dialog',
 		'modules/data_manager',
+		'modules/socket_manager',
 		'views/view/toast',
 		'zepto.touch',
 		'uajudge'
 	],
 
-	function (Backbone, Communicator, Router, ContentRegion, NavView, HeaderView, DialogView, DataManager, ToastView) {
+	function (Backbone, Communicator, Router, ContentRegion, NavView, HeaderView, DialogView, DataManager, SocketManager, ToastView) {
 		'use strict';
 
 		var App = new Backbone.Marionette.Application();
 		App.module("DataManager", DataManager);
+		App.module("SocketManager", SocketManager);
 
 		/* Add application regions here */
 		App.addRegions({
@@ -78,6 +80,7 @@ define([
 				Communicator.command.execute('changePage', 'login');
 			});
 			App.DataManager.start();
+			App.SocketManager.start();
 		});
 
 		return App;

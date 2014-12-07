@@ -62,7 +62,8 @@ require.config({
         moment: '../bower_components/momentjs/moment',
         momentja: '../bower_components/momentjs/lang/ja',
         'backbone.stickit': '../bower_components/backbone.stickit/backbone.stickit',
-        'io': 'vendor/sails.io'
+        'io': 'vendor/sails.io',
+        'pageManager': 'vendor/page_manager'
     },
 
     hbs: {

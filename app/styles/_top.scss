@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/************
+*  top  *
+*************/
+.enterTheRoom {
+  position: relative;
+}
+.notice {
+  position: absolute;
+  top: 0;
+  left: 1%;
+  color: white;
+  background: red;
+  @include circle(2,2);
+}

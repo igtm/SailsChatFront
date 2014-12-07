@@ -5,10 +5,10 @@
 
 // 円の描画
 @mixin circle($width,$height){
-  width: $width+px;
-  height:$height+px;
-  $x : $width*0.5+px;
-  $y : $height*0.5+px;
+  width: $width+rem;
+  height:$height+rem;
+  $x : $width*0.5+rem;
+  $y : $height*0.5+rem;
   -webkit-border-radius: $x +"/"+ $y;
   -moz-border-radius: $x +"/"+ $y;
   border-radius: $x +"/"+ $y;
